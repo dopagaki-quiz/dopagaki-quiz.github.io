@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ドパガキ問題集｜過去問を、登録なしで1問ずつ。</title>
+<meta name="description" content="ITパスポート・基本情報・情報セキュリティマネジメント・AZ-900 などの過去問を、解説を読みながら解ける問題集アプリ。登録なし、1問だけここで試せます。">
+<meta name="theme-color" content="#fbf8f3">
+<link rel="icon" href="assets/dpg_icon.png">
+<link rel="apple-touch-icon" href="assets/dpg_icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ドパガキ問題集">
+<meta property="og:title" content="ドパガキ問題集｜過去問を、登録なしで1問ずつ。">
+<meta property="og:description" content="ITパスポート・基本情報・情報セキュリティマネジメント・AZ-900 などの過去問を、解説を読みながら解ける問題集アプリ。登録なし、1問だけここで試せます。">
+<meta property="og:image" content="https://dopagaki-quiz.github.io/og/index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://dopagaki-quiz.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ドパガキ問題集｜過去問を、登録なしで1問ずつ。">
+<meta name="twitter:description" content="ITパスポート・基本情報・情報セキュリティマネジメント・AZ-900 などの過去問を、解説を読みながら解ける問題集アプリ。登録なし、1問だけここで試せます。">
+<meta name="twitter:image" content="https://dopagaki-quiz.github.io/og/index.png">
+<style>:root{--bg:#fbf8f3;--tx:#221f1c;--sub:#6f6860;--pu:#6d3fe0;--pl:#efe8fd;--ln:#e6dfd3;--card:#fff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:#f1ece3;color:var(--tx);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","YuGothic",Meiryo,sans-serif;font-feature-settings:"palt";line-height:1.7;font-size:16px;overflow-wrap:anywhere}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+.col{max-width:480px;margin:0 auto;background:var(--bg);min-height:100vh;position:relative}
+@media(min-width:520px){.col{box-shadow:0 0 0 1px var(--ln),0 12px 40px rgba(60,40,20,.08)}}
+.btn{display:flex;align-items:center;justify-content:center;min-height:56px;padding:12px 20px;border-radius:16px;background:var(--pu);color:#fff;font-weight:800;font-size:18px;text-decoration:none;text-align:center;border:0;font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:var(--pl);color:var(--pu)}
+.btn.sm{min-height:48px;font-size:15px;border-radius:12px;padding:8px 16px}
+.btn.line{background:#fff;color:var(--tx);border:1px solid var(--ln);font-weight:700}
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;padding:22px 20px calc(22px + env(safe-area-inset-bottom));overflow:hidden;isolation:isolate}
+.hero-bg,.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3}
+.leaf{position:absolute;z-index:-2;pointer-events:none;will-change:transform}
+.leaf.l1{width:130%;height:38%;left:-15%;top:6%;background:radial-gradient(ellipse at 40% 50%,rgba(255,255,255,.7),rgba(255,255,255,0) 68%);transform:rotate(-14deg);animation:sway1 10s ease-in-out infinite alternate}
+.leaf.l2{width:120%;height:34%;left:-10%;top:52%;background:radial-gradient(ellipse at 55% 50%,rgba(109,63,224,.10),rgba(109,63,224,0) 66%);transform:rotate(12deg);animation:sway2 12s ease-in-out infinite alternate}
+.leaf.l3{width:90%;height:26%;left:20%;top:30%;background:radial-gradient(ellipse at 50% 50%,rgba(255,236,190,.55),rgba(255,236,190,0) 66%);transform:rotate(-6deg);animation:sway3 9s ease-in-out infinite alternate}
+@keyframes sway1{from{transform:translate3d(-6%,0,0) rotate(-14deg)}to{transform:translate3d(8%,4%,0) rotate(-9deg)}}
+@keyframes sway2{from{transform:translate3d(7%,0,0) rotate(12deg)}to{transform:translate3d(-8%,-4%,0) rotate(7deg)}}
+@keyframes sway3{from{transform:translate3d(-5%,3%,0) rotate(-6deg)}to{transform:translate3d(6%,-3%,0) rotate(-1deg)}}
+.hero-top{display:block}
+.handle{display:inline-block;font-size:13px;color:#4a443d;font-weight:800;letter-spacing:.02em;background:rgba(251,248,243,.75);border-radius:999px;padding:1px 10px}
+.brand{display:flex;align-items:center;gap:10px;margin-top:8px}
+.brand img{width:44px;height:44px;border-radius:11px}
+.brand span{font-weight:800;font-size:18px}
+.hero-mid{margin-top:auto;margin-bottom:auto;padding:22px 0}
+.hero h1{font-size:40px;line-height:1.28;font-weight:900;letter-spacing:-.01em}
+.hero h1 .w{display:inline-block}
+.hero h1 em{font-style:normal;color:var(--pu)}
+.lead{margin-top:16px;font-size:15px;line-height:1.75;color:#3a352f}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+.stat{background:rgba(255,255,255,.78);border:1px solid rgba(230,223,211,.9);border-radius:14px;padding:10px 6px;text-align:center}
+.stat b{display:block;font-size:22px;line-height:1.2;font-weight:900;color:var(--pu);white-space:nowrap;letter-spacing:-.02em}
+.stat b small{font-size:12px;font-weight:800;margin-left:1px}
+.stat span{display:block;font-size:11.5px;color:var(--sub);margin-top:2px;line-height:1.35}
+.hero-bottom .btn{width:100%}
+.hint{text-align:center;margin-top:12px;font-size:13px;color:var(--sub);font-weight:700}
+/* sections */
+.sec{padding:44px 20px}
+.sec h2{font-size:26px;line-height:1.35;font-weight:900}
+.sec .kicker{font-size:12px;font-weight:800;color:var(--pu);letter-spacing:.06em;margin-bottom:6px}
+.sec .sub{margin-top:8px;color:var(--sub);font-size:14px}
+/* quiz */
+.quiz-card{margin-top:18px;background:var(--card);border:1px solid var(--ln);border-radius:20px;padding:18px 16px;box-shadow:0 6px 20px rgba(60,40,20,.05)}
+.q-text{font-weight:800;font-size:16.5px;line-height:1.7}
+.stmts{margin-top:12px;display:grid;gap:8px}
+.stmts li{display:grid;grid-template-columns:24px 1fr;gap:8px;font-size:14px;line-height:1.7;background:var(--bg);border-radius:12px;padding:10px 12px}
+.stmts li b{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--pl);color:var(--pu);font-size:13px;font-weight:800;margin-top:2px}
+.opts{margin-top:14px;display:grid;gap:10px}
+.opt{display:grid;grid-template-columns:34px 1fr;align-items:center;gap:10px;width:100%;min-height:56px;padding:10px 14px;border-radius:14px;border:2px solid var(--ln);background:#fff;font:inherit;font-size:17px;font-weight:700;color:var(--tx);text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.opt .m{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--pl);color:var(--pu);font-weight:800}
+.opt[aria-disabled=true]{cursor:default}
+.opt.is-correct{border-color:#1f8a4c;background:#e9f7ee}
+.opt.is-correct .m{background:#1f8a4c;color:#fff}
+.opt.is-wrong{border-color:#c2410c;background:#fdeee6}
+.opt.is-wrong .m{background:#c2410c;color:#fff}
+.src{margin-top:12px;font-size:12px;color:var(--sub)}
+.result{margin-top:14px;padding:14px;border-radius:14px;background:var(--pl)}
+.result[hidden]{display:none}
+.result .verdict{font-weight:900;font-size:18px}
+.result.ok .verdict{color:#1f8a4c}
+.result.ng .verdict{color:#c2410c}
+.result .exp{margin-top:6px;font-size:14px;line-height:1.8}
+.result .retry{margin-top:10px;min-height:44px;padding:8px 14px;border:1px solid var(--ln);background:#fff;border-radius:12px;font:inherit;font-size:14px;font-weight:700;color:var(--pu);cursor:pointer}
+.more{margin-top:14px}
+.more .btn{width:100%}
+/* steps */
+.step{margin-top:32px;text-align:center}
+.step .no{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--pu);color:#fff;font-weight:900}
+.step h3{margin-top:8px;font-size:21px;line-height:1.4;font-weight:900}
+.step p{margin:6px auto 0;font-size:14.5px;color:#3a352f;max-width:320px;text-align:left}
+.phone{margin:16px auto 0;width:210px;border-radius:30px;padding:7px;background:#e7e0f7;border:1px solid #d4c8f2;box-shadow:0 10px 28px rgba(109,63,224,.16)}
+.phone img{border-radius:24px;width:100%;height:auto}
+/* shelf */
+.shelf{margin-top:18px;display:grid;gap:12px}
+.shelf li{display:block}
+.shelf .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px;font-weight:700}
+.shelf .row b{font-size:15px;color:var(--pu);white-space:nowrap;font-weight:900}
+.bar{margin-top:5px;height:14px;border-radius:7px;background:var(--pl);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:7px;background:linear-gradient(90deg,#8d6af0,var(--pu))}
+.bar.en i{background:linear-gradient(90deg,#e0a04a,#c9822a)}
+.shelf .en-row b{color:#a86a1a}
+.note{margin-top:14px;font-size:12px;color:var(--sub)}
+/* fixed cta */
+.fcta{position:fixed;left:50%;bottom:0;width:min(100%,480px);transform:translate(-50%,110%);padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(251,248,243,.98) 70%,rgba(251,248,243,0));opacity:0;visibility:hidden;transition:transform .25s ease,opacity .25s ease,visibility 0s .25s;z-index:20}
+.fcta.on{transform:translate(-50%,0);opacity:1;visibility:visible;transition:transform .25s ease,opacity .25s ease}
+.fcta .btn{width:100%;min-height:52px;font-size:17px;box-shadow:0 8px 20px rgba(109,63,224,.28)}
+.zone-end{height:76px}
+/* works */
+.works{background:#f5f0e7;padding:44px 0 36px}
+.works .head{padding:0 20px}
+.hscroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:18px 20px 8px;scroll-padding:0 20px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.card{flex:0 0 calc(min(100vw,480px)*.82);scroll-snap-align:start;background:var(--card);border:1px solid var(--ln);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(60,40,20,.06)}
+.media{position:relative;aspect-ratio:16/9;background:#eae4f7;overflow:hidden}
+.media img,.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.media.pan img{width:130%;max-width:none;animation:pan 16s ease-in-out infinite alternate}
+@keyframes pan{from{transform:translateX(0)}to{transform:translateX(-23%)}}
+.cbody{padding:14px 14px 16px;display:flex;flex-direction:column;flex:1}
+.badge{align-self:flex-start;font-size:11.5px;font-weight:800;color:var(--pu);background:var(--pl);border-radius:999px;padding:2px 10px}
+.card h3{margin-top:8px;font-size:19px;line-height:1.4;font-weight:900}
+.card .c{margin-top:4px;font-size:14px;color:#3a352f;line-height:1.65}
+.credit{margin-top:8px;font-size:11.5px;color:var(--sub);line-height:1.6}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.modes a{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:12px;background:var(--pl);color:var(--pu);font-weight:800;font-size:14px;text-decoration:none}
+.acts{margin-top:auto;padding-top:14px;display:grid;gap:8px}
+.share-msg{min-height:0;font-size:12.5px;color:var(--sub);word-break:break-all;user-select:all;-webkit-user-select:all}
+.share-msg:empty{display:none}
+.share-msg.ok{color:#1f8a4c;font-weight:800;user-select:auto}
+/* footer */
+.foot{padding:36px 20px calc(40px + env(safe-area-inset-bottom));text-align:center}
+.foot .mw{font-weight:800;font-size:15px}
+.socials{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.socials a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;background:#fff;border:1px solid var(--ln);text-decoration:none;font-weight:800;font-size:15px}
+.foot .h{margin-top:14px;font-size:13px;color:var(--sub)}
+/* sub pages */
+.sub-page{padding:8px 20px calc(36px + env(safe-area-inset-bottom))}
+.back{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:800;color:var(--pu);text-decoration:none}
+.sub-media{margin-top:6px;border-radius:20px;overflow:hidden}
+.sub-page .badge{margin-top:16px}
+.sub-page h1{margin-top:8px;font-size:32px;line-height:1.3;font-weight:900}
+.sub-page .catch{margin-top:8px;font-size:16px;color:#3a352f}
+.sub-page .acts{padding-top:20px}
+.sub-page .modes{margin-top:18px}
+.sub-page .mlabel{margin-top:18px;font-size:12px;font-weight:800;color:var(--sub)}
+.sub-page .phone{margin-top:6px}
+.sub-page .brand{margin-top:0}
+.sub-page .stats{margin-top:16px}
+.pcnote{margin-top:12px;font-size:13px;color:var(--sub)}
+@media(prefers-reduced-motion:reduce){
+.leaf,.media.pan img{animation:none!important}
+.media.pan img{width:100%}
+.media video{display:none}
+html{scroll-behavior:auto}
+.fcta,.fcta.on{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="col">
+<div id="dpg-zone">
+<header class="hero">
+<picture class="hero-bg"><source srcset="assets/hero_v.webp" type="image/webp"><img src="assets/hero_v.jpg" alt="" width="720" height="1080" fetchpriority="high"></picture>
+<span class="leaf l1" aria-hidden="true"></span><span class="leaf l2" aria-hidden="true"></span><span class="leaf l3" aria-hidden="true"></span>
+<div class="hero-top">
+<p class="handle">@dopagaki_quiz</p>
+<div class="brand"><img src="assets/dpg_icon.png" alt="" width="44" height="44"><span>ドパガキ問題集</span></div>
+</div>
+<div class="hero-mid">
+<h1><span class="w">過去問を、</span><span class="w"><em>登録なし</em>で</span><span class="w">1問ずつ。</span></h1>
+<p class="lead">ITパスポート・基本情報・情報セキュリティマネジメント・AZ-900 などの過去問を、解説を読みながら解ける問題集アプリ。</p>
+<ul class="stats"><li class="stat"><b>2,623<small>問</small></b><span>過去問</span></li><li class="stat"><b>1,230<small>語</small></b><span>ビジネス英単語</span></li><li class="stat"><b>0<small>秒</small></b><span>アカウント登録</span></li></ul>
+</div>
+<div class="hero-bottom">
+<a id="main-cta" class="btn" href="https://dopagakiquiz.com/">過去問を解いてみる →</a>
+<p class="hint">↓ 1問だけ、ここで解けます</p>
+</div>
+</header>
+
+<section class="sec" id="quiz-sec" aria-labelledby="quiz-h">
+<p class="kicker">1問チャレンジ</p>
+<h2 id="quiz-h">まずは1問、ここで。</h2>
+<div class="quiz-card" id="quiz">
+<p class="q-text">生成AIを用いた生成物の取扱いに関して，既存の著作物の著作権者から許諾を得ることが必要となる可能性のあるものだけを，全て挙げたものはどれか。</p>
+<ul class="stmts"><li><b>a</b><span>好みのアーティストの楽曲に似た音楽が得られるように生成AIを用いて楽曲を生成し，その楽曲をインターネット上にアップロードし，無料で公開した。</span></li><li><b>b</b><span>好みのアーティストの楽曲に似た音楽が得られるように生成AIを用いて楽曲を生成し，その楽曲を自分のPC上に保管し，個人で視聴した。</span></li><li><b>c</b><span>生成AIで音楽を生成したところ，偶然好みのアーティストの楽曲に似た音楽が生成できたので，自分のPC上に保管し，個人で視聴した。</span></li></ul>
+<ul class="opts"><li><button type="button" class="opt" data-correct="1"><span class="m">ア</span><span>a</span></button></li><li><button type="button" class="opt" data-correct="0"><span class="m">イ</span><span>a，b</span></button></li><li><button type="button" class="opt" data-correct="0"><span class="m">ウ</span><span>a，b，c</span></button></li><li><button type="button" class="opt" data-correct="0"><span class="m">エ</span><span>b，c</span></button></li></ul>
+<p class="src">出典：令和8年度 ITパスポート試験 公開問題 問1（IPA）</p>
+<div class="result" role="status" aria-live="polite" hidden>
+<p class="verdict"></p>
+<p class="exp">著作権の侵害は、既存の作品に『似ている（類似性）』ことと、それを元にした『依拠性』がそろうと問題になります。aは似せる目的で作り、ネットで公開しているので、許諾が必要になる可能性があります。bは自分で楽しむだけの私的な利用、cは偶然似ただけで依拠がなく、どちらも許諾は不要と考えられます。</p>
+<button type="button" class="retry">もう一度選ぶ</button>
+</div>
+</div>
+<div class="more"><a class="btn" href="https://dopagakiquiz.com/">続きの499問はドパガキで →</a></div>
+</section>
+
+<section class="sec" style="padding-top:8px" aria-labelledby="use-h">
+<p class="kicker">使い方</p>
+<h2 id="use-h">ひらいて、解いて、また戻る。</h2>
+<div class="step"><span class="no">1</span><h3>本棚から試験を選ぶ</h3><p>ITパスポート、基本情報、AZ-900 など。やりたい試験の本棚を開くだけ。</p><div class="phone"><picture><source srcset="assets/dpg_sp_shelf.webp" type="image/webp"><img src="assets/dpg_sp_shelf.jpg" alt="ドパガキの本棚画面" width="600" height="1169" loading="lazy" decoding="async"></picture></div></div><div class="step"><span class="no">2</span><h3>解説を読みながら1問ずつ</h3><p>答えたらすぐ解説。読んで、次の1問へ進めます。</p><div class="phone"><picture><source srcset="assets/dpg_sp_question.webp" type="image/webp"><img src="assets/dpg_sp_question.jpg" alt="ドパガキの問題画面" width="600" height="1169" loading="lazy" decoding="async"></picture></div></div><div class="step"><span class="no">3</span><h3>1・3・7日後にもう一度</h3><p>「理解した」を押した問題は、間をあけて復習に戻ってきます。まちがえた問題だけの解き直しも。</p><div class="phone"><picture><source srcset="assets/dpg_sp_setup.webp" type="image/webp"><img src="assets/dpg_sp_setup.jpg" alt="ドパガキの設定画面" width="600" height="1169" loading="lazy" decoding="async"></picture></div></div>
+</section>
+
+<section class="sec" style="padding-top:12px" aria-labelledby="shelf-h">
+<p class="kicker">収録数</p>
+<h2 id="shelf-h">本棚に並んでいるもの</h2>
+<ul class="shelf"><li class=""><div class="row"><span>ITパスポート</span><b>500問</b></div><div class="bar" aria-hidden="true"><i style="width:95.4%"></i></div></li><li class=""><div class="row"><span>基本情報技術者</span><b>504問</b></div><div class="bar" aria-hidden="true"><i style="width:96.2%"></i></div></li><li class=""><div class="row"><span>情報セキュリティマネジメント</span><b>460問</b></div><div class="bar" aria-hidden="true"><i style="width:87.8%"></i></div></li><li class=""><div class="row"><span>AZ-900</span><b>350問</b></div><div class="bar" aria-hidden="true"><i style="width:66.8%"></i></div></li><li class=""><div class="row"><span>登録販売者</span><b>479問</b></div><div class="bar" aria-hidden="true"><i style="width:91.4%"></i></div></li><li class=""><div class="row"><span>FP3級</span><b>240問</b></div><div class="bar" aria-hidden="true"><i style="width:45.8%"></i></div></li><li class=""><div class="row"><span>数学A</span><b>90問</b></div><div class="bar" aria-hidden="true"><i style="width:17.2%"></i></div></li><li class="en-row"><div class="row"><span>ビジネス英単語</span><b>1,230語</b></div><div class="bar en" aria-hidden="true"><i style="width:100%"></i></div></li></ul>
+<p class="note">2026年9月30日時点</p>
+</section>
+<div class="zone-end" aria-hidden="true"></div>
+</div>
+
+<section class="works" aria-labelledby="works-h">
+<div class="head">
+<p class="kicker" style="font-size:12px;font-weight:800;color:var(--pu);letter-spacing:.06em;margin-bottom:6px">ほかにも</p>
+<h2 id="works-h" style="font-size:26px;line-height:1.35;font-weight:900">ほかにも作っています</h2>
+<p class="sub" style="margin-top:8px;color:var(--sub);font-size:14px">横にスワイプして見られます。</p>
+</div>
+<div class="hscroll" tabindex="0" aria-label="作品一覧">
+<article class="card">
+<div class="media pan"><picture><source srcset="assets/datacenter.webp" type="image/webp"><img src="assets/datacenter.jpg" alt="データセンターのゲーム" loading="lazy" decoding="async"></picture></div>
+<div class="cbody">
+<span class="badge">PC向け</span>
+<h3>データセンターのゲーム</h3>
+<p class="c">ラックを組んで、配線して、通信を流す</p>
+<div class="modes" aria-label="モード"><a href="https://datacenter-game-khaki.vercel.app/">運営</a><a href="https://datacenter-game-khaki.vercel.app/?mode=training">研修</a><a href="https://datacenter-game-khaki.vercel.app/?mode=ai">AI</a><a href="https://datacenter-game-khaki.vercel.app/?mode=beast">ビースト</a></div>
+<div class="acts">
+<a class="btn sm" href="https://datacenter-game-khaki.vercel.app/">開く →</a>
+<button type="button" class="btn sm ghost" data-share data-url="https://datacenter-game-khaki.vercel.app/" data-title="データセンターのゲーム">PCで開く用にリンクを送る</button><p class="share-msg" role="status" aria-live="polite"></p>
+</div>
+</article><article class="card">
+<div class="media"><picture><source srcset="assets/ironveil.webp" type="image/webp"><img src="assets/ironveil.jpg" alt="Iron Veil Protocol" loading="lazy" decoding="async"></picture><video muted playsinline autoplay loop preload="metadata" data-src="assets/ironveil.mp4" data-poster="assets/ironveil.webp" aria-hidden="true" tabindex="-1"></video></div>
+<div class="cbody">
+<span class="badge">PC向け</span>
+<h3>Iron Veil Protocol</h3>
+<p class="c">ブラウザで動くロボットの3Dアクション（試作）</p>
+
+<div class="acts">
+<a class="btn sm" href="https://shuyaofficial.github.io/iron-veil-protocol/">開く →</a>
+<button type="button" class="btn sm ghost" data-share data-url="https://shuyaofficial.github.io/iron-veil-protocol/" data-title="Iron Veil Protocol">PCで開く用にリンクを送る</button><p class="share-msg" role="status" aria-live="polite"></p>
+</div>
+</article><article class="card">
+<div class="media"><picture><source srcset="assets/miyashita.webp" type="image/webp"><img src="assets/miyashita.jpg" alt="宮下パークFPS" loading="lazy" decoding="async"></picture><video muted playsinline autoplay loop preload="metadata" data-src="assets/miyashita.mp4" data-poster="assets/miyashita.webp" aria-hidden="true" tabindex="-1"></video></div>
+<div class="cbody">
+<span class="badge">PC向け</span>
+<h3>宮下パークFPS</h3>
+<p class="c">国の3D都市モデル（PLATEAU）で、渋谷・宮下パークの屋上を再現</p>
+<p class="credit">3D都市モデル：国土交通省 Project PLATEAU（CC BY 4.0）</p>
+<div class="acts">
+<a class="btn sm" href="https://miyashita-park-fps.vercel.app">開く →</a>
+<button type="button" class="btn sm ghost" data-share data-url="https://miyashita-park-fps.vercel.app" data-title="宮下パークFPS">PCで開く用にリンクを送る</button><p class="share-msg" role="status" aria-live="polite"></p>
+</div>
+</article><article class="card">
+<div class="media"><picture><source srcset="assets/90days.webp" type="image/webp"><img src="assets/90days.jpg" alt="90days" loading="lazy" decoding="async"></picture><video muted playsinline autoplay loop preload="metadata" data-src="assets/90days.mp4" data-poster="assets/90days.webp" aria-hidden="true" tabindex="-1"></video></div>
+<div class="cbody">
+<span class="badge">スマホ可</span>
+<h3>90days</h3>
+<p class="c">研修のあとの90日を続ける、目標達成の道具箱</p>
+
+<div class="acts">
+<a class="btn sm" href="https://shuyaofficial.github.io/90days/">開く →</a>
+
+</div>
+</article>
+</div>
+</section>
+
+<footer class="foot">
+<p class="mw">AI（Claude）と一緒に作っています</p>
+<div class="socials"><a href="https://x.com/dopagaki_quiz">X</a><a href="https://www.tiktok.com/@dopagaki_quiz">TikTok</a><a href="https://www.youtube.com/@dopagaki_quiz">YouTube</a><a href="https://www.instagram.com/dopagaki_quiz/">Instagram</a></div>
+<p class="h">@dopagaki_quiz</p>
+</footer>
+</div>
+<div class="fcta" id="fcta"><a class="btn" href="https://dopagakiquiz.com/">過去問を解く</a></div>
+<script>(function () {
+  'use strict';
+  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
+
+  /* 動画: 近づいたら読み込み、見えている間だけ再生 */
+  var vids = [].slice.call(document.querySelectorAll('video[data-src]'));
+  if (vids.length && !rm && hasIO) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) {
+          if (!v._ready) {
+            v._ready = true;
+            if (v.dataset.poster) v.poster = v.dataset.poster;
+            v.src = v.dataset.src;
+            v.load();
+          }
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else if (v._ready) {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+    vids.forEach(function (v) { vio.observe(v); });
+  }
+
+  /* 1問チャレンジ */
+  var quiz = document.getElementById('quiz');
+  if (quiz) {
+    var opts = [].slice.call(quiz.querySelectorAll('.opt'));
+    var res = quiz.querySelector('.result');
+    var verdict = res.querySelector('.verdict');
+    var answered = false;
+    opts.forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (answered) return;
+        answered = true;
+        var ok = b.dataset.correct === '1';
+        opts.forEach(function (o) {
+          o.setAttribute('aria-disabled', 'true');
+          if (o.dataset.correct === '1') o.classList.add('is-correct');
+        });
+        if (!ok) b.classList.add('is-wrong');
+        res.classList.toggle('ok', ok);
+        res.classList.toggle('ng', !ok);
+        verdict.textContent = ok ? '正解です' : '不正解。正解はア（a）です';
+        res.hidden = false;
+      });
+    });
+    var retry = quiz.querySelector('.retry');
+    if (retry) retry.addEventListener('click', function () {
+      answered = false;
+      opts.forEach(function (o) {
+        o.removeAttribute('aria-disabled');
+        o.classList.remove('is-correct', 'is-wrong');
+      });
+      res.hidden = true;
+      quiz.scrollIntoView({ block: 'start' });
+    });
+  }
+
+  /* 固定CTA: ドパガキ区間だけ。ファーストビューの主ボタンが見えている間は隠す */
+  var zone = document.getElementById('dpg-zone');
+  var cta = document.getElementById('fcta');
+  var mainBtn = document.getElementById('main-cta');
+  if (zone && cta && hasIO) {
+    var inZone = false, mainVis = true;
+    var upd = function () { cta.classList.toggle('on', inZone && !mainVis); };
+    new IntersectionObserver(function (es) {
+      inZone = es[es.length - 1].isIntersecting; upd();
+    }, { rootMargin: '-45% 0px 0px 0px' }).observe(zone);
+    if (mainBtn) {
+      new IntersectionObserver(function (es) {
+        mainVis = es[es.length - 1].isIntersecting; upd();
+      }).observe(mainBtn);
+    }
+  }
+
+  /* 共有: navigator.share → コピー → URL表示 */
+  function legacyCopy(text) {
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      ok ? resolve() : reject(new Error('copy failed'));
+    });
+  }
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(function () { return legacyCopy(text); });
+    }
+    return legacyCopy(text);
+  }
+  function fallback(btn, msg, url) {
+    copyText(url).then(function () {
+      msg.className = 'share-msg ok';
+      msg.textContent = 'コピーしました';
+    }, function () {
+      msg.className = 'share-msg';
+      msg.textContent = url;
+    });
+  }
+  document.addEventListener('click', function (ev) {
+    var btn = ev.target.closest && ev.target.closest('[data-share]');
+    if (!btn) return;
+    var url = btn.dataset.url, title = btn.dataset.title;
+    var msg = btn.parentNode.querySelector('.share-msg');
+    if (navigator.share) {
+      navigator.share({ title: title, url: url }).catch(function (err) {
+        if (err && err.name === 'AbortError') return;
+        fallback(btn, msg, url);
+      });
+    } else {
+      fallback(btn, msg, url);
+    }
+  });
+})();
+</script>
+</body>
+</html>
